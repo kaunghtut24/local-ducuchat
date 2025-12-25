@@ -275,26 +275,61 @@ Before you begin, ensure you have the following installed and configured:
 
 ## Quick Start
 
-Get up and running in 5 minutes:
+### ⚡ One-Command Setup (Recommended)
+
+Get up and running in 5 minutes with our interactive setup wizard:
 
 ```bash
-# 1. Clone the repository
+# Clone the repository
 git clone https://github.com/watat83/document-chat-system.git
 cd document-chat-system
 
-# 2. Install dependencies
+# Run the setup wizard
+npm run setup
+```
+
+The wizard will:
+- ✅ Check prerequisites (Node.js, PostgreSQL)
+- ✅ Install dependencies
+- ✅ Create and configure `.env` file
+- ✅ Generate secure secrets
+- ✅ Set up database schema
+- ✅ Optionally seed database
+
+**📖 For detailed instructions, see:**
+- [QUICKSTART.md](./QUICKSTART.md) - 5-minute quick start guide
+- [SETUP_GUIDE.md](./SETUP_GUIDE.md) - Comprehensive setup documentation
+- [SETUP_SUMMARY.md](./SETUP_SUMMARY.md) - Overview of all setup methods
+
+### 🚀 Platform-Specific Quick Start
+
+**macOS/Linux:**
+```bash
+./scripts/quick-start.sh
+```
+
+**Windows (PowerShell):**
+```powershell
+.\scripts\quick-start.ps1
+```
+
+### 📝 Manual Setup
+
+If you prefer manual setup:
+
+```bash
+# 1. Install dependencies
 npm install
 
-# 3. Set up environment variables
-cp .env.example .env.local
-# Edit .env.local with your API keys (see Configuration section below)
+# 2. Set up environment
+cp .env.example .env
+# Edit .env with your configuration
 
-# 4. Set up the database
+# 3. Set up database
 npx prisma generate
 npx prisma db push
-npm run db:seed
 
-# 5. Start the development server
+# 4. Start development server
 npm run dev
 ```
 
